@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Evoke.SmartCare.Assets.Xaml.ConditionGapsIcon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" >
+    <Viewbox Stretch="Uniform">
+        <Canvas UseLayoutRounding="False" Width="31.0" Height="42.0">
+            <Canvas.Clip>
+                <RectangleGeometry Rect="0.0,0.0,31.0,42.0"/>
+            </Canvas.Clip>
+            <Canvas UseLayoutRounding="False">
+                <Canvas UseLayoutRounding="False">
+                    <Path Fill="ForestGreen">
+                        <Path.Data>
+                            <PathGeometry Figures="M 8.25006 3.15 C 8.25006 1.41031 9.66032 0 11.4001 0 H 19.8001 C 21.5398 0 22.9501 1.41031 22.9501 3.15 V 5.25 C 22.9501 6.98974 21.5398 8.4 19.8001 8.4 H 11.4001 C 9.66032 8.4 8.25006 6.98974 8.25006 5.25 V 3.15 Z M 11.4001 2.1 C 10.8201 2.1 10.3501 2.57011 10.3501 3.15 V 5.25 C 10.3501 5.82989 10.8201 6.3 11.4001 6.3 H 19.8001 C 20.38 6.3 20.8501 5.82989 20.8501 5.25 V 3.15 C 20.8501 2.57011 20.38 2.1 19.8001 2.1 H 11.4001 Z"/>
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="ForestGreen">
+                        <Path.Data>
+                            <PathGeometry Figures="M 4.04999 5.24996 C 3.47008 5.24996 2.99999 5.72007 2.99999 6.29996 V 38.85 C 2.99999 39.4299 3.47008 39.9 4.04999 39.9 H 27.15 C 27.7299 39.9 28.2 39.4299 28.2 38.85 V 6.29996 C 28.2 5.72007 27.7299 5.24996 27.15 5.24996 H 21.9 V 3.14996 H 27.15 C 28.8897 3.14996 30.3 4.56027 30.3 6.29996 V 38.85 C 30.3 40.5897 28.8897 42 27.15 42 H 4.04999 C 2.31025 42 0.899994 40.5897 0.899994 38.85 V 6.29996 C 0.899994 4.56027 2.31025 3.14996 4.04999 3.14996 H 9.29999 V 5.24996 H 4.04999 Z"/>
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="ForestGreen">
+                        <Path.Data>
+                            <PathGeometry Figures="M 7.19989 24.1501 C 7.19989 23.5701 7.66998 23.1001 8.24989 23.1001 H 22.9499 C 23.5298 23.1001 23.9999 23.5701 23.9999 24.1501 C 23.9999 24.73 23.5298 25.2001 22.9499 25.2001 H 8.24989 C 7.66998 25.2001 7.19989 24.73 7.19989 24.1501 Z"/>
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="ForestGreen">
+                        <Path.Data>
+                            <PathGeometry Figures="M 7.19989 29.4001 C 7.19989 28.8201 7.66998 28.3501 8.24989 28.3501 H 22.9499 C 23.5298 28.3501 23.9999 28.8201 23.9999 29.4001 C 23.9999 29.98 23.5298 30.4501 22.9499 30.4501 H 8.24989 C 7.66998 30.4501 7.19989 29.98 7.19989 29.4001 Z"/>
+                        </Path.Data>
+                    </Path>
+                    <Path Fill="ForestGreen">
+                        <Path.Data>
+                            <PathGeometry Figures="M 7.19989 34.6501 C 7.19989 34.0701 7.66998 33.6001 8.24989 33.6001 H 22.9499 C 23.5298 33.6001 23.9999 34.0701 23.9999 34.6501 C 23.9999 35.23 23.5298 35.7001 22.9499 35.7001 H 8.24989 C 7.66998 35.7001 7.19989 35.23 7.19989 34.6501 Z"/>
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+                <Path Fill="ForestGreen">
+                    <Path.Data>
+                        <PathGeometry Figures="M 11.9093 10.5 L 14.0819 17.1225 L 16.7406 14.1455 H 22.3737 C 22.9405 14.1455 23.4 14.5457 23.4 15.0393 C 23.4 15.5329 22.9405 15.9331 22.3737 15.9331 H 17.7444 L 13.2193 21 L 11.2869 15.1097 L 9.63266 17.6709 H 1.92624 C 1.35945 17.6709 0.899994 17.2708 0.899994 16.7772 C 0.899994 16.2835 1.35945 15.8834 1.92624 15.8834 H 8.43225 L 11.9093 10.5 Z"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Canvas>
+    </Viewbox>
+</UserControl>

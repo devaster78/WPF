@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--<Style x:Key="Boundary1" TargetType="Border" BasedOn="{StaticResource {x:Type Border}}">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="BorderThickness" Value="10"/>
+        <Setter Property="BorderBrush" Value="#2F5082"/>
+        <Setter Property="Background" Value="#ffffffff"/>
+    </Style>-->
+</ResourceDictionary>

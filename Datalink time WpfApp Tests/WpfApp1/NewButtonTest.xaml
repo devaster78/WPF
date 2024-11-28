@@ -1,0 +1,166 @@
+﻿<Window x:Class="WpfApp1.NewButtonTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="NewButtonTest" Height="450" Width="800">
+    <Window.Resources>
+        <!--<Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="Yellow" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+        <!--<SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>-->
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <!--<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>-->
+            <!--<Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Blue"/>
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>-->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true" CornerRadius="10">
+                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="Blue"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Background" TargetName="border" Value="White"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="Blue"/>
+                            </Trigger>
+                            <!--<Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>-->
+                            <!--<Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="{Binding Path=Foreground}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{Binding Path=Background}"/>
+                            </Trigger>-->
+                            <!--<Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Background" TargetName="border" Value="{TemplateBinding Background}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{TemplateBinding Foreground}"/>
+                            </Trigger>-->
+                            <!--<Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>-->
+                            <!--<Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>-->
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <!--
+        This was a try to mimic button with border and textblock, but failed as textblock was not able to cover whole border area along with VerticalAlignment to center.
+        <Border BorderThickness="1" BorderBrush="Blue" CornerRadius="10" Background="Transparent" Width="100px" Height="30px" Name="txtBorder">
+            <TextBlock  Text="Cancel" FontSize="12" FontWeight="Bold"   TextAlignment="Center" Width="90px" Height="20px">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Foreground" Value="Blue"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Blue"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                
+        <Setter TargetName="txtBorder" Property="" Value="White"/>
+                                <Setter Property="Foreground" Value="White"/>
+        
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Foreground" Value="Blue"/>
+                                <Setter Property="Background" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </Border>-->
+
+        <!--
+        This was a try to mimic button with label, but failed as could not set background and foreground when mouse left event button fires.
+        <Label Content="Cancel" FontSize="12" FontWeight="Bold"  Width="100px" Height="30px">
+            <Label.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="Foreground" Value="Blue"/>
+                    <Setter Property="BorderBrush" Value="Blue"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Blue"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Foreground" Value="Blue"/>
+                            <Setter Property="Background" Value="White"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                            <EventTrigger.Actions>
+                                
+                            </EventTrigger.Actions>
+                            --><!--<Setter Property="Background" Value="Blue"/>
+                            <Setter Property="Foreground" Value="White"/>--><!--
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Resources>
+        </Label>-->
+        <!--<Button Style="{DynamicResource ButtonStyle1}" Content="Cancel" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="11" FontWeight="Bold" Foreground="Blue" Background="White" BorderThickness="1" BorderBrush="Blue" Padding="1">-->
+
+        <Button Content="Cancel" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="11" FontWeight="Bold" BorderThickness="1" BorderBrush="Blue" Padding="1" Style="{StaticResource ButtonStyle1}">
+            <!--<Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Blue"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Blue"/>
+                            <Setter Property="TextElement.Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+    <Setter Property="Background"  Value="White"/>
+    <Setter Property="TextElement.Foreground" Value="Blue"/>
+</Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>-->
+
+        </Button>
+    </Grid>
+</Window>

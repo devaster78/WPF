@@ -1,0 +1,146 @@
+﻿<Window x:Class="WpfApp1.AddressedButtonStyle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="AddressedButtonStyle" Height="450" Width="800">
+    <Window.Resources>
+
+        <Style x:Key="Boundary3" TargetType="Border">
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#2596be"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="ToolTip" Value="This item has been addressed"/>            
+        </Style>
+
+        <ControlTemplate x:Key="OkIconTemplate">
+            <Viewbox xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Name="Ok_xaml">
+                <Canvas UseLayoutRounding="False" Width="29.0" Height="29.0">
+                    <Canvas.Clip>
+                        <RectangleGeometry Rect="0.0,0.0,29.0,29.0"/>
+                    </Canvas.Clip>
+                    <Canvas UseLayoutRounding="False">
+                        <Path Fill="{TemplateBinding Foreground}">
+                            <Path.Data>
+                                <PathGeometry Figures="M 14.8489 0.455841 C 7.1287 0.455841 0.849121 6.73592 0.849121 14.4558 C 0.849121 22.1758 7.1287 28.4558 14.8489 28.4558 C 22.569 28.4558 28.8491 22.1758 28.8491 14.4558 C 28.8491 6.7359 22.569 0.455841 14.8489 0.455841 Z M 14.8489 25.9126 C 8.53199 25.9126 3.39235 20.7727 3.39235 14.4558 C 3.39235 8.13889 8.53192 2.99914 14.8489 2.99914 C 21.1658 2.99914 26.3057 8.13897 26.3057 14.4558 C 26.3058 20.7727 21.1657 25.9126 14.8489 25.9126 Z M 10.1847 13.9139 L 12.7565 16.4852 L 19.5128 9.72915 C 20.0092 9.23232 20.8145 9.23233 21.311 9.72876 C 21.808 10.2253 21.808 11.0308 21.311 11.5273 L 13.6785 19.1597 L 13.6771 19.1616 L 13.6561 19.1826 C 13.4078 19.4312 13.081 19.5552 12.7565 19.5552 C 12.4318 19.5552 12.1057 19.4309 11.8576 19.183 L 8.38656 15.7125 C 7.88967 15.2158 7.88976 14.4109 8.38654 13.9141 C 8.88331 13.4174 9.68812 13.4179 10.1847 13.9139 Z"/>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </Canvas>
+            </Viewbox>
+        </ControlTemplate>
+
+        <Style TargetType="Button" x:Key="AddressedStyle">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Style="{StaticResource Boundary3}" Name="borderContainer">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25px"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Border BorderThickness="0" Grid.Column="0" Height="20px" Width="20px" VerticalAlignment="Center" HorizontalAlignment="Right" Background="Transparent">
+                                    <Control Template="{StaticResource OkIconTemplate}"/>
+                                    <!--<Border.Background>
+                    <VisualBrush Stretch="Fill">
+                        <VisualBrush.Visual>
+                            <xamlRes:OkIcon ToolTip="This item has been addressed"/>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Border.Background>-->
+                                </Border>
+                                <TextBlock x:Name="txtPart" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Text="{TemplateBinding Button.Content}" Background="Transparent" FontSize="14" FontWeight="SemiBold"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="borderContainer" Value="#ff04dcb6"/>
+                                <Setter Property="Foreground" TargetName="txtPart" Value="White"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Background" TargetName="borderContainer" Value="White"/>
+                                <Setter Property="Foreground" TargetName="txtPart" Value="Blue"/>
+                                <Setter Property="Foreground" Value="#ff04dcb6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--<Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ToggleButtonStyle1" TargetType="{x:Type ToggleButton}">
+            <!--<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>-->
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        
+
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <!--<Button Grid.Row="1" Content="Addressed" Style="{StaticResource AddressedStyle}"/>-->
+        <ToggleButton Style="{DynamicResource ToggleButtonStyle1}"/>
+
+    </Grid>
+</Window>

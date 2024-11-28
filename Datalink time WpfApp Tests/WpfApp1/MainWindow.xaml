@@ -1,0 +1,127 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"        
+>
+    <Window.Resources>
+        <SolidColorBrush x:Key="ComboBox.Static.Background" Color="Yellow"/>
+        <ControlTemplate x:Key="{x:Type ToggleButton}" TargetType="{x:Type ToggleButton}">
+            <Border x:Name="templateRoot" BorderBrush="{StaticResource ComboBox.Static.Border}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                <Border x:Name="splitBorder" BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Right"
+                Margin="0" SnapsToDevicePixels="true"
+                Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+                    <Path x:Name="arrow"
+                  Data="F1 M 0,0 L 2.667,2.66665 L 5.3334,0 L 5.3334,-1.78168 L 2.6667,0.88501 L0,-1.78168 L0,0 Z"
+                  Fill="Red" HorizontalAlignment="Center"
+                  Margin="0" VerticalAlignment="Center"/>
+                </Border>
+            </Border>
+            <!--<ControlTemplate.Triggers>
+                ...
+            </ControlTemplate.Triggers>-->
+        </ControlTemplate>
+        
+        <!--<Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+    </Window.Resources>
+    <Grid >
+        <!--<Button Style="{DynamicResource ButtonStyle1}" Content="Drop"/>-->
+        <!--<ContentControl x:Name="demo" Content="{Binding Factory}"/>-->
+        <!--<WebBrowser x:Name="wb"/>-->
+        <!--<ContentControl>
+            <FlowDocumentScrollViewer HorizontalAlignment="Left" Width="255px" VerticalScrollBarVisibility="Hidden"
+                             MinZoom="100" MaxZoom="100">
+                <FlowDocument  IsOptimalParagraphEnabled="False"  xml:space="preserve" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontSize="12" Background="White" Foreground="#2596be"><Paragraph>Members 18 – 74 years of age who had an outpatient visit AND their Body Mass Index (BMI) was documented <Run FontWeight="bold">during 2019 or 2020</Run>.</Paragraph></FlowDocument>
+            </FlowDocumentScrollViewer>
+        </ContentControl>-->
+
+        <!--<ComboBox
+        Margin="12 0 0 0"
+        Foreground="Yellow"
+        Background="Green"
+            
+        Grid.Column="1">
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <Setter Property="BorderBrush" Value="Blue" />
+                    <Setter Property="Background" Value="Blue" />
+                </Style>
+            </ComboBox.ItemContainerStyle>
+            <ComboBoxItem Name="Name" Content="Name" IsSelected="False"/>
+            <ComboBoxItem Name="Address" Content="Address" IsSelected="False"/>
+            <ComboBoxItem Name="Age" Content="Age" IsSelected="False"/>
+        </ComboBox>-->
+
+        <ComboBox Background="Yellow" Style="{DynamicResource ComboBoxStyle1}">
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Background" Value="Yellow"/>
+                    <Setter Property="BorderBrush" Value="Yellow"/>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+            <ComboBoxItem Content="One"/>
+            <ComboBoxItem Content="Two"/>
+            <ComboBoxItem Content="Three"/>
+        </ComboBox>
+
+    </Grid>
+</Window>
